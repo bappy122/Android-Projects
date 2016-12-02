@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ak_bappy.personalaccountant.DeleteData"
+    tools:showIn="@layout/activity_delete_data">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Delete Particular Transaction"
+                android:id="@+id/textView7"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Enter Transaction ID"
+                android:id="@+id/textView9"
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ID"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button8"
+                android:onClick="onClickDelete" />
+
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Remove All Transactions"
+                android:id="@+id/textView8"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:layout_marginTop="30dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Delete  All"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button10"
+                android:textSize="19dp"
+                android:layout_marginBottom="40dp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClickDeleteAll" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

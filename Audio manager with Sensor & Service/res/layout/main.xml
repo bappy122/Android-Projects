@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:gravity="center">
+	
+
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+		android:layout_height="match_parent" 
+		android:orientation="vertical"
+		android:gravity="center"
+		>
+		
+	    <EditText  
+	    
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id="@+id/displayXYZ" />
+		
+		<EditText	
+		
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id="@+id/display" />
+		
+		<Button
+		    android:id="@+id/buttonLED"
+		    android:layout_width="200px"
+		    android:layout_height="wrap_content"
+		    android:text="LED"
+		    android:onClick="btnLedClick" />
+		
+		<Button 
+		    android:id="@+id/button1" 
+		    android:layout_width="200px"
+			android:layout_height="wrap_content"
+			android:text="Silent" 
+			android:onClick="btnSilentClick" />
+		
+		<Button 
+		    android:id="@+id/button2"
+		    android:layout_width="200px"
+			android:layout_height="wrap_content"
+			android:text="Ring"
+			android:onClick="btnRingClick" />
+
+		<Button
+		    android:id="@+id/button3"
+		    android:layout_width="200px"
+		    android:layout_height="wrap_content"
+		    android:text="Vibrate"
+		    android:onClick="btnVibrateClick" />
+		
+		<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center">
+		    
+		<Button
+		    android:id="@+id/btnStartService"
+		    android:layout_width="200px"
+		    android:layout_height="wrap_content"
+		    android:text="Start Serrvice"
+		    android:onClick="btnStartServiceClicked" />
+		<Button
+		    android:id="@+id/btnStopService"
+		    android:layout_width="200px"
+		    android:layout_height="wrap_content"
+		    android:text="Stop Service"
+		    android:onClick="btnStopServiceClicked" />		    
+		    
+		</LinearLayout>
+		
+
+	</LinearLayout>
+
+</LinearLayout>

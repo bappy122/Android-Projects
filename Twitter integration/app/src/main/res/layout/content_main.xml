@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cpass"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ak_bappy.twitter.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/twitter_logo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="94dp" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:text="Share"
+        android:id="@+id/button"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="113dp" />
+</RelativeLayout>

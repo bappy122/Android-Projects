@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ak_bappy.lettersforkids.LetterTest"
+    tools:showIn="@layout/activity_letter_test">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Guess the Letter"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:gravity="center"
+                android:foregroundGravity="center"
+                android:background="@drawable/tback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/letter"
+                android:textColor="#ffffff"
+                android:textSize="280dp" />
+
+
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_marginTop="30dp"
+                    android:layout_width="160dp"
+                    android:textSize="17dp"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:onClick="onClickNext"
+                    android:gravity="center"
+                    android:foregroundGravity="center"
+                    android:background="@drawable/tback"
+                    android:id="@+id/button4"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center_horizontal" />
+
+                <Button
+                    android:gravity="center"
+                    android:foregroundGravity="center"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/tback"
+                    android:textSize="17dp"
+                    android:onClick="onClickPronounce"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pronounce"
+                    android:id="@+id/button5"
+                    android:layout_gravity="center_horizontal" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

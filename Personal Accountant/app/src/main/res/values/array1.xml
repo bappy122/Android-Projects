@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="spinnerItems">
+        <item>Bank Deposit</item>
+        <item>Bank Withdraw</item>
+        <item>Bonus</item>
+        <item>Borrowing</item>
+        <item>Cosmetics</item>
+        <item>Food</item>
+        <item>Home Rent</item>
+        <item>Mobile Bill</item>
+        <item>Salary</item>
+        <item>Stationary</item>
+        <item>Service</item>
+        <item>Transport</item>
+        <item>Tution</item>
+    </string-array>
+</resources>

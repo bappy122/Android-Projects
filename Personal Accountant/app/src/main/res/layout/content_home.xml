@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ak_bappy.personalaccountant.Home"
+    tools:showIn="@layout/activity_home">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:weightSum="1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Add  Transaction"
+                android:layout_gravity="center"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button"
+                android:textColor="#ffffff"
+                android:onClick="onClickTransaction"
+                android:textSize="19dp" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_border"
+                android:text="Generate  Report"
+                android:id="@+id/button3"
+                android:textColor="#ffffff"
+                android:textSize="19dp"
+                android:onClick="onClickReport" />
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:onClick="searchButtonAction"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/chngPassButton"
+                android:textColor="#ffffff"
+                android:textSize="19dp" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Delete  Transaction"
+                android:textSize="19dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button2"
+                android:onClick="onClickDeleteTransaction" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_border"
+                android:text="Archive"
+                android:onClick="onClickArchive"
+                android:id="@+id/button5"
+                android:textColor="#ffffff"
+                android:textSize="19dp" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Change  Password"
+                android:onClick="cngPassButtonAction"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button9"
+                android:textColor="#ffffff"
+                android:textSize="19dp" />
+
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="How to Use"
+                android:textColor="#ffffff"
+                android:textSize="19dp"
+                android:onClick="onClickHowToUse"
+                android:background="@drawable/transparent_border"
+                android:id="@+id/button13"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:textColor="#ffffff"
+                android:textSize="19dp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent_border"
+                android:text="About"
+                android:id="@+id/button14"
+                android:layout_gravity="center_horizontal"
+                android:onClick="onClickAbout" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
