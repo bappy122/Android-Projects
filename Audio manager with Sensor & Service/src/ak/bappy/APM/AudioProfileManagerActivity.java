@@ -1,6 +1,7 @@
 package ak.bappy.APM;
 
 import ak.bappy.APM.R.id;
+import android.R.integer;
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,19 +14,22 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class AudioProfileManagerActivity extends Activity implements SensorEventListener {
+public class AudioProfileManagerActivity extends Activity{
     /** Called when the activity is first created. */
 	
+	private static final int SHAKE_THRESHOLD = 150;
+	private static long lastUpdate = 0;
 	AudioManager audioManager;
     private SensorManager mSensorManager;
     private Sensor mProximity;
     EditText display,displayXYZ;
     int led = 0;
-    double x=100.0,y=100.0,z=100.0,prox = 100.0;
+    double x,y,z,prox, last_x,last_y,last_z;
     
     // for acclerometer
     Sensor acclerometer;
@@ -40,7 +44,9 @@ public class AudioProfileManagerActivity extends Activity implements SensorEvent
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        /*
+         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+         
         display = (EditText)findViewById(id.display);
         displayXYZ =(EditText)findViewById(id.displayXYZ);
         
@@ -53,8 +59,7 @@ public class AudioProfileManagerActivity extends Activity implements SensorEvent
         // for acclerometer
         sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         acclerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        
-       
+        */
         
     }
     
@@ -62,8 +67,8 @@ public class AudioProfileManagerActivity extends Activity implements SensorEvent
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		mSensorManager.registerListener(this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
-		sm.registerListener(this,acclerometer,SensorManager.SENSOR_DELAY_NORMAL);
+		//mSensorManager.registerListener(this, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+		//sm.registerListener(this,acclerometer,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
 	public void btnSilentClick(View v)
@@ -88,10 +93,9 @@ public class AudioProfileManagerActivity extends Activity implements SensorEvent
 		// TODO Auto-generated method stub
 		
 	}
-
+/*
 	public void onSensorChanged(SensorEvent event) 
 	{
-		
 		if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) 
 		{
             if (event.values[0] >= -0.01 && event.values[0]<= 0.01) 
@@ -108,24 +112,50 @@ public class AudioProfileManagerActivity extends Activity implements SensorEvent
         }
 		else 
 		{
-			//acclerometer
 			x=event.values[0];
 			y=event.values[1];
 			z=event.values[2];
 			displayXYZ.setText("Acclerometer Sensor\nX : "+event.values[0] + "\nY: "+event.values[1] + "\nZ: "+event.values[2]);
 		}
-		
+		detectShake(x,y,2.0);
+		silentVibrate(z);
+	}
+	*/
+	
+	private void silentVibrate(double z) {
+		// TODO Auto-generated method stub
 		if(z > 7.0 && prox != 0)
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		if(z < -7.0 && prox == 0)
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
 	}
+
+	public void detectShake(double x, double y, double z)
+	{
+		long curTime = System.currentTimeMillis();
+	    // only allow one update every 100ms.
+	    if ((curTime - lastUpdate) > 100) {
+	      long diffTime = (curTime - lastUpdate);
+	      lastUpdate = curTime;
+
+	      float speed = (float) (Math.abs(x+y+z - last_x - last_y - last_z) / diffTime * 10000);
+
+	      if (speed > SHAKE_THRESHOLD) {
+	        //Log.d("sensor", "shake detected w/ speed: " + speed);
+	        Toast.makeText(this, "shake detected w/ speed: " + speed, Toast.LENGTH_SHORT).show();
+	      }
+	      last_x = x;
+	      last_y = y;
+	      last_z = z;
+	      lastUpdate = curTime;
+	    }
+	}
 	
 	@Override
 	protected void onPause() {
 		super.onPause();
-		sm.unregisterListener(this);
-		mSensorManager.unregisterListener(this);
+		//sm.unregisterListener(this);
+		//mSensorManager.unregisterListener(this);
 	}
 	
 	public void btnStartServiceClicked(View v)
